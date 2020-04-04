@@ -11,9 +11,17 @@ package cocktail;
  */
 public class Cup {
     private int capacity;
+    Blunder b;
+    private int calories=(b.totalNumberOfCalories()/b.getAllVolume())*capacity;
+    int volumeOfCup=0;
 
     public Cup(int capacity) {
         this.capacity = capacity;
+    }
+   
+    
+    public String getInfo(){
+        return "This is Cup that has a capacity = "+this.capacity+" and has a calories = "+this.getCalories();
     }
 
     public int getCapacity() {
@@ -23,13 +31,12 @@ public class Cup {
     public void setCapacity(int capacity) {
         this.capacity = capacity;
     }
-    public int contetCalories(int capacity){
-        return 0 ;
+
+    public int getCalories() {
+        return calories;
     }
-    
-    public String getInfo(){
-        return "This is Cup that has a capacity = "+this.getCapacity();
-    }
+
+   
     
     
     

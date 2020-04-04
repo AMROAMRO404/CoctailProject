@@ -5,33 +5,37 @@
  */
 package cocktail;
 
-import java.awt.Color;
+
 
 /**
  *
  * @author asus
  */
 public class Milk extends Ingredients {
-    private int volume;
-    static final Color MilkCo=Color.WHITE;
-
-    public Milk(int volume, String name, int amountOfCalories) {
-        super(name, amountOfCalories);
-        this.volume = volume;
-    }
    
-    
-    public int getVolume() {
-        return volume;
+    private Color co;
+
+    public Milk(Color co, int volume, String name, int amountOfCalories) {
+        super(volume, name, amountOfCalories);
+        this.co = co;
     }
 
-    public void setVolume(int volume) {
-        this.volume = volume;
+    
+
+
+    public Color getCo() {
+        return co;
     }
+
+    public void setCo(Color co) {
+        this.co = co;
+    }
+
+  
     
     @Override
     public String getInfo(){
-        return "This is Milk "+this.getName();
+        return "This is Milk "+this.getName()+" and has amountOfCalories = "+this.getAmountOfCalories() ;
     }
     
     

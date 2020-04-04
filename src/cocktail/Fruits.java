@@ -4,40 +4,35 @@
  * and open the template in the editor.
  */
 package cocktail;
-import java.awt.Color;
+
 /**
  *
  * @author asus
  */
 public class Fruits extends Ingredients {
-    private int volume;
+    
     private Color co;
 
-    public Fruits(int volume, Color co, String name, int amountOfCalories) {
-        super(name, amountOfCalories);
-        this.volume = volume;
+    public Fruits(Color co, int volume, String name, int amountOfCalories) {
+        super(volume, name, amountOfCalories);
         this.co = co;
-        
     }
 
-    public int getVolume() {
-        return volume;
-    }
+    
 
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
 
-    public String getCo() {
-        return null;
+    public Color getCo() {
+        return co;
     }
 
     public void setCo(Color co) {
         this.co = co;
     }
+
+  
     @Override
     public String getInfo(){
-        return "This is Fruit "+this.getName();
+        return "This is Fruit "+this.getName()+" that has amountOfCalories = "+this.getAmountOfCalories();
     }
     
     

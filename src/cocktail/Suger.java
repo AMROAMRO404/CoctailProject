@@ -10,26 +10,25 @@ package cocktail;
  * @author asus
  */
 public class Suger extends Ingredients {
-    private int amountOfSuger=20;
+    
 
-    public Suger(String name, int amountOfCalories) {
-        super(name, amountOfCalories);
-        
+    private Color color;
+
+    public Suger(Color color, int volume, String name, int amountOfCalories) {
+        super(volume, name, amountOfCalories);
+        this.color = color;
     }
 
-    public int getAmountOfSuger() {
-        return amountOfSuger;
-    }
-
-    public void setAmountOfSuger(int amountOfSuger) {
-        this.amountOfSuger = amountOfSuger;
-    }
+   
     @Override
     public String getInfo(){
-        return "This is Suger "+this.getName();
+        return "This is Suger that has amountOfCalories = "+this.getAmountOfCalories();
     }
    
-
+    @Override
+    public int getVolume() {
+        return 0;//volume of sugar when blend 
+    }
     
     
     
