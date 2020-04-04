@@ -19,8 +19,6 @@ public class Fruits extends Ingredients {
     }
 
     
-
-
     public Color getCo() {
         return co;
     }

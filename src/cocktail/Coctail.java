@@ -15,11 +15,12 @@ public class Coctail {
     /**
      * @param args the command line arguments
      */
+    
     public static void main(String[] args)  {
         // TODO code application logic here
-        Blunder b = new Blunder(200);
-        Fruits f = new Fruits(new Color(255, 0, 0), 200, "Apple", 150);
-        Milk m = new Milk(new Color(255,255,255), 100, "Milk", 130);
+        Blunder b = new Blunder(1000);
+        Fruits f = new Fruits(new Color(255, 0, 0), 100, "Apple", 100);
+        Milk m = new Milk(new Color(255,255,255), 150, "Milk",140);
         Suger s = new Suger(new Color(0,0,0), 0, "Suger", 150);  
                     
                     try{
@@ -28,7 +29,7 @@ public class Coctail {
                     b.add(m);
                     b.add(f);
                     b.blend();
-                    b.pour(new Cup(79));
+                    b.pour(new Cup(50, b));
                     }
                     catch(BlenderIsEmptyException ex2){
                         
@@ -38,6 +39,9 @@ public class Coctail {
                         System.out.println("you hava exceeded the capacity of the blender");
                     }
                   
+                  System.out.println(Blunder.getVolume());
+                  System.out.println(b.totalNumberOfCalories());
+                 
             
         
             

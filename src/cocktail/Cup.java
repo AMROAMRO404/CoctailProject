@@ -12,12 +12,15 @@ package cocktail;
 public class Cup {
     private int capacity;
     Blunder b;
-    private int calories=(b.totalNumberOfCalories()/b.getAllVolume())*capacity;
+   private int calories;
     int volumeOfCup=0;
 
-    public Cup(int capacity) {
+    public Cup(int capacity, Blunder b) {
         this.capacity = capacity;
+        this.b = b;
     }
+
+   
    
     
     public String getInfo(){
@@ -33,7 +36,12 @@ public class Cup {
     }
 
     public int getCalories() {
-        return calories;
+       
+        return (Blunder.totalNumberOfCalories()/Blunder.getVolume())*this.getCapacity();
+    }
+
+    public void setCalories(int calories) {
+        this.calories =calories;
     }
 
    

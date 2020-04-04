@@ -1,11 +1,11 @@
 package cocktail;
 
 public class Color {
-    private int r;
+     private int r;
 
-    private int g;
+     private int g;
 
-    private int b;
+       private int b;
     public Color(int r, int g, int b){
         this.r= r;
         this.g = g;
