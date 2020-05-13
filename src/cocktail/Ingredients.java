@@ -5,59 +5,42 @@
  */
 package cocktail;
 
+import java.io.Serializable;
+
 /**
  *
  * @author asus
  */
-public abstract class Ingredients {
-    private int volume ;
-    private String name;
-    private int amountOfCalories;
-    private Color co;
+public abstract class Ingredients implements Serializable {
+    private String name;   
+    private int calories;
 
-    public Ingredients(int volume, String name, int amountOfCalories) {
-        this.volume = volume;
+    public Ingredients(String name, int calories) {
         this.name = name;
-        this.amountOfCalories = amountOfCalories;
+        this.calories = calories;
+        
     }
-
-    
+    public Ingredients() {
+    }
    
-
     public String getName() {
-        return name;
+        return this.name;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public int getAmountOfCalories() {
-        return amountOfCalories;
+    public int getCalories() {
+        return this.calories;
+    }
+
+    public void setCalories(int calories) {
+        this.calories = calories;
     }
     
-    public void setAmountOfCalories(int amountOfCalories) {
-        this.amountOfCalories = amountOfCalories;
-    }
+    public abstract int getVolume();
+    public abstract Color getColor();
     public abstract String getInfo();
-
-    public int getVolume() {
-        return volume;
-    }
-
-    public void setVolume(int volume) {
-        this.volume = volume;
-    }
-
-    public Color getCo() {
-        return co;
-    }
-
-    public void setCo(Color co) {
-        this.co = co;
-    }
-    
-    
-    
     
 }

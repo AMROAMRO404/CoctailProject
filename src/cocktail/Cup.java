@@ -5,45 +5,38 @@
  */
 package cocktail;
 
+import java.io.Serializable;
+
 /**
  *
  * @author asus
  */
-public class Cup {
+public class Cup implements Serializable{
     private int capacity;
-    Blunder b;
-   private int calories;
-    int volumeOfCup=0;
+    private int calories;
 
-    public Cup(int capacity, Blunder b) {
-        this.capacity = capacity;
-        this.b = b;
+    public Cup() {
     }
 
-   
-   
-    
+    public Cup(int capacity) {
+        this.capacity = capacity;
+    }
     public String getInfo(){
-        return "This is Cup that has a capacity = "+this.capacity+" and has a calories = "+this.getCalories();
+        return "This is Cup that has a capacity = "+this.getCapacity()+" and has a calories = "+this.getCalories();
     }
 
     public int getCapacity() {
         return capacity;
     }
 
-    public void setCapacity(int capacity) {
-        this.capacity = capacity;
-    }
-
     public int getCalories() {
-       
-        return (Blunder.totalNumberOfCalories()/Blunder.getVolume())*this.getCapacity();
+        return calories;
     }
-
-    public void setCalories(int calories) {
-        this.calories =calories;
+    
+    public void setCalories(int calories){
+        this.calories = calories;
     }
-
+    
    
     
     

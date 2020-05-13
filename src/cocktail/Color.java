@@ -1,15 +1,20 @@
 package cocktail;
 
-public class Color {
-     private int r;
+import java.io.Serializable;
 
-     private int g;
+public class Color implements Serializable {
+     public int r;
 
-       private int b;
+     public int g;
+
+       public int b;
     public Color(int r, int g, int b){
         this.r= r;
         this.g = g;
         this.b=  b;
+    }
+
+    public Color() {
     }
 
     public int getR() {

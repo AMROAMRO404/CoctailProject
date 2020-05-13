@@ -7,35 +7,34 @@ package cocktail;
 
 
 
+
+
 /**
  *
  * @author asus
  */
-public class Milk extends Ingredients {
+public class Milk extends Ingredients  {
    
-    private Color co;
+    private int volume;
 
-    public Milk(Color co, int volume, String name, int amountOfCalories) {
-        super(volume, name, amountOfCalories);
-        this.co = co;
+    public Milk() {
     }
-
     
-
-
-    public Color getCo() {
-        return co;
+    public Milk(String name, int calories, int volume) {
+        super(name, calories);
+        this.volume = volume;
     }
 
-    public void setCo(Color co) {
-        this.co = co;
+    public int getVolume() {
+        return this.volume;
     }
-
-  
     
+    public Color getColor() {
+        return new Color(255,255,255);
+    }
     @Override
     public String getInfo(){
-        return "This is Milk "+this.getName()+" and has amountOfCalories = "+this.getAmountOfCalories() ;
+        return "This is Milk "+this.getName()+" and has amountOfCalories = "+this.getCalories() ;
     }
     
     

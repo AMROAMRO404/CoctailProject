@@ -5,32 +5,40 @@
  */
 package cocktail;
 
+import java.io.Serializable;
+
 /**
  *
  * @author asus
  */
 public class Fruits extends Ingredients {
-    
-    private Color co;
-
-    public Fruits(Color co, int volume, String name, int amountOfCalories) {
-        super(volume, name, amountOfCalories);
-        this.co = co;
-    }
 
     
-    public Color getCo() {
-        return co;
+    
+    private int volume;
+
+    private Color color;
+
+    public Fruits(int volume, Color color, String name, int calories) {
+        super(name, calories);
+        this.volume = volume;
+        this.color = color;
     }
 
-    public void setCo(Color co) {
-        this.co = co;
+    public Fruits() {
+    }
+    public int getVolume() {
+        return this.volume;
+    }
+
+    public Color getColor() {
+        return this.color;
     }
 
   
     @Override
     public String getInfo(){
-        return "This is Fruit "+this.getName()+" that has amountOfCalories = "+this.getAmountOfCalories();
+        return "This is Fruit "+this.getName()+" that has amountOfCalories = "+this.getCalories();
     }
     
     

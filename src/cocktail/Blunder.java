@@ -6,96 +6,109 @@
 package cocktail;
 
 
+import java.io.Serializable;
 import java.util.ArrayList;
 /**
  *
  * @author asus
  */
-public class Blunder  {
-    private ArrayList<Ingredients> ingredients= new ArrayList<>();
+public class Blunder implements Serializable  {
+    private ArrayList<Ingredients> ingredients;
     private int capacity;
-    public static int volume=0;
-    private static int calories=0;
-    private Color CocktailColor;
-    private static int volumeToCheack=0;
-  
-    //public int percetageOfCalories=this.calories/this.volume;
+    private int volume;
+    private int calories;
+    private Color color;
+    private double calPerMl;
 
-    public Blunder(int capacity) {
+    public Blunder() {
+    }
+    
+    public Blunder(int capacity){
         this.capacity = capacity;
-        
+        this.ingredients = new ArrayList();
     }
 
-    
-    
-    
-     
-    public void add(Ingredients ingredient) throws BlenderOverFlowException{
-        Blunder.volumeToCheack+=ingredient.getVolume();
-        Blunder.calories+=ingredient.getAmountOfCalories();
-        if(Blunder.volumeToCheack>this.capacity){
+    public Blunder(ArrayList<Ingredients> ingredients, int capacity) {
+        this.ingredients = ingredients;
+        this.capacity = capacity;
+    }
+
+    public void add(Ingredients ingredient) throws BlenderOverFlowException {
+        
+        
+        if (this.volume + ingredient.getVolume() > this.capacity){
             throw new BlenderOverFlowException();
         }
         else{
             this.ingredients.add(ingredient);
         }
-
         
-    }
-   
-        public void blend() {
-        Blunder.volume=0;Blunder.calories=0;
-        for (int i =0 ;i<ingredients.size();i++){
-             Blunder.volume+=ingredients.get(i).getVolume();
-            Blunder.calories+=ingredients.get(i).getAmountOfCalories();
-        }
+        this.volume += ingredient.getVolume();
             
     }
-      public void pour(Cup cup)throws BlenderIsEmptyException {
-          
-          if(Blunder.volume ==0){
-              throw new BlenderIsEmptyException();
-          }
-          else{
-            if(Blunder.volume<=cup.getCapacity())
-              cup.volumeOfCup=Blunder.volume;
-             
-            else{ cup.volumeOfCup=cup.getCapacity();
-                 if(Blunder.volume>=cup.getCapacity()){
-            Blunder.volume -=cup.getCapacity();
-            Blunder.calories-=cup.getCalories();
-       
+
+    public void blend() {
+        
+        int totalR = 0;
+        int totalG = 0;
+        int totalB = 0;
+        
+        for(Ingredients ing: this.ingredients){
+            totalR += ing.getColor().getR();
+            totalG += ing.getColor().getG();
+            totalB += ing.getColor().getB();
+            
+            this.calories += ing.getCalories();
+        }
+        
+        this.color = new Color(totalR/this.ingredients.size(), totalG/this.ingredients.size(), totalB/this.ingredients.size());
+        
+        this.calPerMl = (double) (this.calories) / (double) (this.volume);
+        
+        this.ingredients.clear();
+        
+    }
+
+    public void pour(Cup cup) throws BlenderIsEmptyException {
+        
+        if (this.volume > 0){
+            
+            if (this.volume < cup.getCapacity()){
+                cup.setCalories((int)(this.volume * this.calPerMl));
+                this.volume = 0;  
             }
+            else{
+                this.volume -= cup.getCapacity();
+                cup.setCalories((int) (cup.getCapacity() * this.calPerMl));
             }
-          }
-          
-      }
-    public static int totalNumberOfCalories(){
-        System.out.println("The Amount Of Calories is : ");
+        }
+        else{
+            throw new BlenderIsEmptyException();
+        }
+    }
+
+    public int getCapacity() {
+        return capacity;
+    }
+
+    public int getVolume() {
+        return volume;
+    }
+
+    public int getCalories() {
         return calories;
     }
 
-    public static int getVolume() {
-        System.out.println("The volume of blender : ");
-        return volume;
+    public Color getColor() {
+        return color;
     }
-    
-    public String getRGBcolor(){
-        int r=0,g=0,b=0;
-      for(int i=0;i<ingredients.size();i++){
-          r+=ingredients.get(i).getCo().getR();
-          b+=ingredients.get(i).getCo().getB();
-          g+=ingredients.get(i).getCo().getG();
-      }
-       r/=ingredients.size();
-       g/=ingredients.size();
-       b/=ingredients.size();
-       CocktailColor.setB(b);CocktailColor.setG(g);CocktailColor.setR(r);
-       
-       return "The values of RGB are : R = "+r+" G = "+g+" B = "+b;
+
+    public double getCalPerMl() {
+        return calPerMl;
     }
     public String getInfo(){
-        return "This is Blunder that has a Volume =  "+Blunder.getVolume()+"/n"+getRGBcolor();
+        return "This is Blunder that has a Volume =  "+this.getVolume()+", and capacity = "+this.getCapacity()+
+               "\n"+"The Amount Of Calories is : "+ this.getCalories();
    }
    
     
