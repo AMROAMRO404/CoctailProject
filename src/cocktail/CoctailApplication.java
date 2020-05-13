@@ -88,6 +88,7 @@ public class CoctailApplication extends javax.swing.JFrame {
         beforePoure = new javax.swing.JTextField();
         jLabel19 = new javax.swing.JLabel();
         overallCalories = new javax.swing.JTextField();
+        jLabel20 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         ShowFileInformation = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -97,10 +98,13 @@ public class CoctailApplication extends javax.swing.JFrame {
 
         jPanel1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
         jPanel1.setToolTipText("");
+        jPanel1.setLayout(null);
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 3, 14)); // NOI18N
         jLabel1.setForeground(new java.awt.Color(102, 102, 102));
-        jLabel1.setText("Welcom to \"Amro Cocktail\" , we are not alone, but we are the best    :)");
+        jLabel1.setText("Welcom to \"Amro Cocktail\"  ");
+        jPanel1.add(jLabel1);
+        jLabel1.setBounds(230, 12, 207, 17);
 
         NameListOfFruites.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Apple(50cal/100ml)", "Orange(30cal/100ml)", "Banana(20cal/100ml)", "Grapes(20cal/100ml)", "Strawberry(50cal/100ml)", " " }));
         NameListOfFruites.addActionListener(new java.awt.event.ActionListener() {
@@ -108,17 +112,32 @@ public class CoctailApplication extends javax.swing.JFrame {
                 NameListOfFruitesActionPerformed(evt);
             }
         });
+        jPanel1.add(NameListOfFruites);
+        NameListOfFruites.setBounds(10, 80, 144, 30);
 
         jLabel2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel2.setText("Volume(ml)");
+        jPanel1.add(jLabel2);
+        jLabel2.setBounds(170, 60, 73, 15);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel3.setText("Calories");
+        jPanel1.add(jLabel3);
+        jLabel3.setBounds(294, 64, 61, 15);
+        jPanel1.add(volumeFruitTextField);
+        volumeFruitTextField.setBounds(166, 80, 87, 30);
+        jPanel1.add(caloriesFruitTextField);
+        caloriesFruitTextField.setBounds(294, 80, 84, 30);
 
         jScrollPane1.setViewportView(ingredientsList);
 
+        jPanel1.add(jScrollPane1);
+        jScrollPane1.setBounds(12, 267, 250, 263);
+
         jLabel5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel5.setText("List of Ingredients that you need to add for the blender");
+        jPanel1.add(jLabel5);
+        jLabel5.setBounds(12, 246, 319, 15);
 
         addFruit.setText("Add Fruit to the list ");
         addFruit.addActionListener(new java.awt.event.ActionListener() {
@@ -126,9 +145,13 @@ public class CoctailApplication extends javax.swing.JFrame {
                 addFruitActionPerformed(evt);
             }
         });
+        jPanel1.add(addFruit);
+        addFruit.setBounds(10, 120, 127, 30);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("Do you want to add Suger");
+        jPanel1.add(jLabel6);
+        jLabel6.setBounds(11, 150, 165, 15);
 
         chekSugger.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         chekSugger.setText("Yes I need  ");
@@ -137,9 +160,13 @@ public class CoctailApplication extends javax.swing.JFrame {
                 chekSuggerActionPerformed(evt);
             }
         });
+        jPanel1.add(chekSugger);
+        chekSugger.setBounds(11, 171, 93, 23);
 
         jLabel7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel7.setText("If you want to add milk, please set the volume that you need: ");
+        jPanel1.add(jLabel7);
+        jLabel7.setBounds(122, 171, 348, 20);
 
         saveButton.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         saveButton.setText("Save ");
@@ -148,27 +175,55 @@ public class CoctailApplication extends javax.swing.JFrame {
                 saveButtonActionPerformed(evt);
             }
         });
+        jPanel1.add(saveButton);
+        saveButton.setBounds(268, 488, 63, 30);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel9.setText("Color of your coctail in RGB system");
+        jPanel1.add(jLabel9);
+        jLabel9.setBounds(337, 282, 197, 15);
+        jPanel1.add(RsystemColorCoctail);
+        RsystemColorCoctail.setBounds(337, 324, 34, 30);
 
         jLabel10.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel10.setText("R");
+        jPanel1.add(jLabel10);
+        jLabel10.setBounds(337, 303, 22, 15);
 
         jLabel11.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel11.setText("G");
+        jPanel1.add(jLabel11);
+        jLabel11.setBounds(381, 303, 16, 15);
+        jPanel1.add(GsystemColorCoctail);
+        GsystemColorCoctail.setBounds(381, 324, 34, 30);
 
         jLabel12.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel12.setText("B");
+        jPanel1.add(jLabel12);
+        jLabel12.setBounds(433, 303, 14, 15);
+        jPanel1.add(BsystemColorCoctail);
+        BsystemColorCoctail.setBounds(433, 324, 33, 30);
+        jPanel1.add(BsystemColorFruit);
+        BsystemColorFruit.setBounds(517, 80, 30, 30);
 
         jLabel13.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel13.setText("Color of your Fruit in RGB system");
+        jPanel1.add(jLabel13);
+        jLabel13.setBounds(396, 64, 300, 15);
+        jPanel1.add(RsystemColorFruit);
+        RsystemColorFruit.setBounds(396, 80, 34, 30);
+        jPanel1.add(GsystemColorFruit);
+        GsystemColorFruit.setBounds(457, 80, 32, 30);
 
         jLabel14.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel14.setText("Blender has voume = 1500 ml");
+        jPanel1.add(jLabel14);
+        jLabel14.setBounds(11, 40, 166, 15);
 
         jLabel8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel8.setText("Remaining volume after poure = ");
+        jPanel1.add(jLabel8);
+        jLabel8.setBounds(330, 510, 183, 15);
 
         remainingCapacityTectField.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         remainingCapacityTectField.addActionListener(new java.awt.event.ActionListener() {
@@ -176,6 +231,8 @@ public class CoctailApplication extends javax.swing.JFrame {
                 remainingCapacityTectFieldActionPerformed(evt);
             }
         });
+        jPanel1.add(remainingCapacityTectField);
+        remainingCapacityTectField.setBounds(520, 500, 80, 30);
 
         addMilk.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         addMilk.setText("Add milk to list");
@@ -184,12 +241,22 @@ public class CoctailApplication extends javax.swing.JFrame {
                 addMilkActionPerformed(evt);
             }
         });
+        jPanel1.add(addMilk);
+        addMilk.setBounds(337, 200, 123, 30);
+        jPanel1.add(milkVolumeTextField);
+        milkVolumeTextField.setBounds(480, 171, 92, 30);
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel15.setText("milk has 50cal/100ml");
+        jPanel1.add(jLabel15);
+        jLabel15.setBounds(443, 150, 120, 15);
+        jPanel1.add(melkCalories);
+        melkCalories.setBounds(590, 171, 84, 30);
 
         jLabel16.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel16.setText("melk's calories");
+        jPanel1.add(jLabel16);
+        jLabel16.setBounds(581, 150, 101, 15);
 
         addSuger.setText("Add Suger");
         addSuger.setEnabled(false);
@@ -198,6 +265,8 @@ public class CoctailApplication extends javax.swing.JFrame {
                 addSugerActionPerformed(evt);
             }
         });
+        jPanel1.add(addSuger);
+        addSuger.setBounds(12, 205, 83, 30);
 
         moreFruites.setText("if you need more Fruits please click me ");
         moreFruites.addActionListener(new java.awt.event.ActionListener() {
@@ -205,11 +274,17 @@ public class CoctailApplication extends javax.swing.JFrame {
                 moreFruitesActionPerformed(evt);
             }
         });
+        jPanel1.add(moreFruites);
+        moreFruites.setBounds(156, 121, 251, 30);
 
         cupCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cup with volume = 50ml", "cup with volume =100ml", "cup with volume = 150ml", " " }));
+        jPanel1.add(cupCombo);
+        cupCombo.setBounds(337, 376, 174, 30);
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel17.setText("Choose the cup that you need ");
+        jPanel1.add(jLabel17);
+        jLabel17.setBounds(340, 360, 174, 15);
 
         poureButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         poureButton.setText("poure");
@@ -218,6 +293,8 @@ public class CoctailApplication extends javax.swing.JFrame {
                 poureButtonActionPerformed(evt);
             }
         });
+        jPanel1.add(poureButton);
+        poureButton.setBounds(337, 409, 65, 30);
 
         BlendButton.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         BlendButton.setText("blend your Ingredient");
@@ -226,14 +303,22 @@ public class CoctailApplication extends javax.swing.JFrame {
                 BlendButtonActionPerformed(evt);
             }
         });
+        jPanel1.add(BlendButton);
+        BlendButton.setBounds(337, 241, 151, 30);
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel18.setText("Calories of the cup = ");
+        jPanel1.add(jLabel18);
+        jLabel18.setBounds(337, 441, 160, 15);
 
         caloriesCup.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jPanel1.add(caloriesCup);
+        caloriesCup.setBounds(520, 440, 80, 30);
 
         jLabel4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel4.setText("Total Volume before poure = ");
+        jPanel1.add(jLabel4);
+        jLabel4.setBounds(337, 473, 183, 15);
 
         beforePoure.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         beforePoure.addActionListener(new java.awt.event.ActionListener() {
@@ -241,223 +326,20 @@ public class CoctailApplication extends javax.swing.JFrame {
                 beforePoureActionPerformed(evt);
             }
         });
+        jPanel1.add(beforePoure);
+        beforePoure.setBounds(520, 470, 80, 30);
 
         jLabel19.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel19.setText("Overall Clories in Blender");
+        jPanel1.add(jLabel19);
+        jLabel19.setBounds(552, 283, 132, 15);
+        jPanel1.add(overallCalories);
+        overallCalories.setBounds(552, 324, 87, 30);
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(NameListOfFruites, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(11, 11, 11)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(volumeFruitTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGap(41, 41, 41)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(caloriesFruitTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 61, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 166, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(RsystemColorFruit, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(27, 27, 27)
-                                .addComponent(GsystemColorFruit, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(28, 28, 28)
-                                .addComponent(BsystemColorFruit, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addContainerGap())
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(1, 1, 1)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(saveButton))
-                                    .addComponent(addSuger)
-                                    .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addComponent(jLabel18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                                .addGap(27, 27, 27))
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                                    .addComponent(jLabel8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 183, Short.MAX_VALUE)
-                                                    .addComponent(jLabel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                            .addComponent(beforePoure, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                                            .addComponent(remainingCapacityTectField, javax.swing.GroupLayout.DEFAULT_SIZE, 72, Short.MAX_VALUE)
-                                            .addComponent(caloriesCup))
-                                        .addGap(90, 90, 90))
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                    .addComponent(BlendButton)
-                                                    .addComponent(poureButton)
-                                                    .addComponent(addMilk, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addComponent(RsystemColorCoctail, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(jLabel10, javax.swing.GroupLayout.PREFERRED_SIZE, 22, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 16, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(GsystemColorCoctail, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                        .addGap(18, 18, 18)
-                                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                                            .addComponent(jLabel12, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                                            .addComponent(BsystemColorCoctail, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                                                    .addComponent(jLabel17)
-                                                    .addComponent(cupCombo, javax.swing.GroupLayout.PREFERRED_SIZE, 174, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                                .addGap(0, 23, Short.MAX_VALUE))
-                                            .addComponent(jLabel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                        .addGap(18, 18, 18)
-                                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                            .addComponent(overallCalories, javax.swing.GroupLayout.PREFERRED_SIZE, 87, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addComponent(jLabel19))
-                                        .addGap(2, 2, 2))))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE)))
-                        .addGap(20, 20, 20))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(addFruit)
-                                .addGap(18, 18, 18)
-                                .addComponent(moreFruites, javax.swing.GroupLayout.PREFERRED_SIZE, 251, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(chekSugger)
-                                .addGap(18, 18, 18)
-                                .addComponent(jLabel7)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(milkVolumeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addComponent(melkCalories, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel16, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(24, 24, 24))))
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addGap(79, 79, 79)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 522, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
-        );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
-                        .addGap(9, 9, 9)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel13))
-                        .addGap(11, 11, 11)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(NameListOfFruites, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(volumeFruitTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(caloriesFruitTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(RsystemColorFruit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(GsystemColorFruit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(BsystemColorFruit, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addFruit)
-                    .addComponent(moreFruites))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel15)
-                    .addComponent(jLabel16))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(chekSugger)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jLabel7, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(milkVolumeTextField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(melkCalories, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(11, 11, 11)
-                        .addComponent(addSuger)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jLabel5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(saveButton)
-                                .addGap(23, 23, 23))
-                            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 263, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addContainerGap())))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 6, Short.MAX_VALUE)
-                        .addComponent(addMilk)
-                        .addGap(18, 18, 18)
-                        .addComponent(BlendButton)
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel9)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                                    .addComponent(RsystemColorCoctail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(GsystemColorCoctail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BsystemColorCoctail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel19)
-                                .addGap(26, 26, 26)
-                                .addComponent(overallCalories, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(21, 21, 21)
-                        .addComponent(jLabel17)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(cupCombo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(3, 3, 3)
-                        .addComponent(poureButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel18)
-                            .addComponent(caloriesCup, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel4)
-                            .addComponent(beforePoure, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel8)
-                            .addComponent(remainingCapacityTectField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(23, 23, 23))))
-        );
+        jLabel20.setIcon(new javax.swing.ImageIcon("C:\\Users\\asus\\Desktop\\1154-0243000040000-1.jpg")); // NOI18N
+        jLabel20.setText("jLabel20");
+        jPanel1.add(jLabel20);
+        jLabel20.setBounds(0, 0, 710, 540);
 
         jTabbedPane1.addTab("Welcome", jPanel1);
 
@@ -484,7 +366,7 @@ public class CoctailApplication extends javax.swing.JFrame {
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGap(203, 203, 203)
                         .addComponent(ShowFileInformation, javax.swing.GroupLayout.PREFERRED_SIZE, 279, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(100, Short.MAX_VALUE))
+                .addContainerGap(93, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -820,6 +702,7 @@ public class CoctailApplication extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
