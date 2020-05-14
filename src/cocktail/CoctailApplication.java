@@ -176,12 +176,13 @@ public class CoctailApplication extends javax.swing.JFrame {
             }
         });
         jPanel1.add(saveButton);
-        saveButton.setBounds(268, 488, 63, 30);
+        saveButton.setBounds(270, 450, 63, 30);
 
         jLabel9.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
+        jLabel9.setForeground(new java.awt.Color(102, 102, 102));
         jLabel9.setText("Color of your coctail in RGB system");
         jPanel1.add(jLabel9);
-        jLabel9.setBounds(337, 282, 197, 15);
+        jLabel9.setBounds(334, 282, 200, 15);
         jPanel1.add(RsystemColorCoctail);
         RsystemColorCoctail.setBounds(337, 324, 34, 30);
 
@@ -375,7 +376,7 @@ public class CoctailApplication extends javax.swing.JFrame {
                 .addComponent(ShowFileInformation)
                 .addGap(47, 47, 47)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 271, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(125, Short.MAX_VALUE))
+                .addContainerGap(128, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("forFilePart", jPanel2);
@@ -388,7 +389,7 @@ public class CoctailApplication extends javax.swing.JFrame {
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING)
+            .addComponent(jTabbedPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 570, Short.MAX_VALUE)
         );
 
         pack();
