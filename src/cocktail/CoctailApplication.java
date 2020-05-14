@@ -146,7 +146,7 @@ public class CoctailApplication extends javax.swing.JFrame {
             }
         });
         jPanel1.add(addFruit);
-        addFruit.setBounds(10, 120, 127, 30);
+        addFruit.setBounds(10, 120, 150, 30);
 
         jLabel6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         jLabel6.setText("Do you want to add Suger");
@@ -275,7 +275,7 @@ public class CoctailApplication extends javax.swing.JFrame {
             }
         });
         jPanel1.add(moreFruites);
-        moreFruites.setBounds(156, 121, 251, 30);
+        moreFruites.setBounds(180, 120, 251, 30);
 
         cupCombo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "cup with volume = 50ml", "cup with volume =100ml", "cup with volume = 150ml", " " }));
         jPanel1.add(cupCombo);
@@ -339,7 +339,7 @@ public class CoctailApplication extends javax.swing.JFrame {
         jLabel20.setIcon(new javax.swing.ImageIcon("C:\\Users\\asus\\Desktop\\1154-0243000040000-1.jpg")); // NOI18N
         jLabel20.setText("jLabel20");
         jPanel1.add(jLabel20);
-        jLabel20.setBounds(0, 0, 710, 540);
+        jLabel20.setBounds(0, 0, 700, 540);
 
         jTabbedPane1.addTab("Welcome", jPanel1);
 
@@ -429,10 +429,11 @@ public class CoctailApplication extends javax.swing.JFrame {
    
     
         
-        displayIngredientList();
+        
        try {
            blunder.add(fruits);
            ingrediant.add(fruits);
+           displayIngredientList();
        } catch (BlenderOverFlowException ex) {
            JOptionPane.showMessageDialog(this, "Blunder is full !!");
        }
@@ -448,14 +449,12 @@ public class CoctailApplication extends javax.swing.JFrame {
         //calories = 50cal/100ml
         int calories = volume/2;
         Milk milk = new Milk(milkName, calories, volume);
-      
-        
-        displayIngredientList();
         melkCalories.setText(""+calories);
         
         try {
            blunder.add(milk);
            ingrediant.add(milk);
+            displayIngredientList();
        } catch (BlenderOverFlowException ex) {
            JOptionPane.showMessageDialog(this, "Blunder is full !!");
        }
@@ -469,10 +468,11 @@ public class CoctailApplication extends javax.swing.JFrame {
         Suger suger = new Suger();
        
         
-        displayIngredientList();
+        
         try {
            blunder.add(suger);
            ingrediant.add(suger);
+           displayIngredientList();
        } catch (BlenderOverFlowException ex) {
            JOptionPane.showMessageDialog(this, "Blunder is full !!");
        }
